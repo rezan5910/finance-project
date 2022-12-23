@@ -90,3 +90,14 @@ let finances = [
 // The total number of months included in the dataset.
 const numberOfMonths = finances.length;
 console.log(numberOfMonths);
+
+
+// using map method to extract number values from the main array without destroying the main array.
+// to use this array as the main array for the calculations
+const finVal = finances.map(item=>item[1]);
+// console.log(finVal);
+
+// The net total amount of Profit / Losses over the entire period.
+// adding values and keeping a rolling tally of total and storing the result in anew variable
+const netTotal = finVal.reduce((total,value)=>total+value,0);
+console.log(`$${netTotal}`);
