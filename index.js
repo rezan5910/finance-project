@@ -87,3 +87,6 @@ let finances = [
 ['Feb-2017', 671099]
 ];
 
+// The total number of months included in the dataset.
+const numberOfMonths = finances.length;
+console.log(numberOfMonths);
