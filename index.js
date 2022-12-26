@@ -101,3 +101,5 @@ const finVal = finances.map(item=>item[1]);
 // adding values and keeping a rolling tally of total and storing the result in anew variable
 const netTotal = finVal.reduce((total,value)=>total+value,0);
 console.log(`$${netTotal}`);
+
+
