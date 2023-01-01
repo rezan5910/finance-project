@@ -136,3 +136,31 @@ for (let i=0; i<finances.length-1;i++){
 }
 console.log(`Greatest Increase in profits: ${greatProfDate} ($${greatProfit})`);
 console.log(`Greatest Decrease in Profits: ${greatLosDate} ($${greatLoss}) `);
+
+
+
+// section below is entirely outside of the project requirements:
+
+// creating a dom results comntaier with the ID of results which is on the HTMl
+const resultContainer= document.getElementById('results');
+
+// making elements for the results i am looking to output
+const totalMonthsResult=document.createElement('p');
+const netTotalResult=document.createElement('p');
+const avChangeResult=document.createElement('p');
+const greatProfitResult=document.createElement('p');
+const greatLossresult=document.createElement('p');
+
+// setting the text content of the elements:
+totalMonthsResult.textContent=`Total Months: ${numberOfMonths}`;
+netTotalResult.textContent=`Net Total : $${netTotal}`;
+avChangeResult.textContent=`Average Change: $${avChange.toFixed(2)}`;
+greatProfitResult.textContent= `Greatest Increase in profits: ${greatProfDate} ($${greatProfit})`;
+greatLossresult.textContent=`Greatest Decrease in Profits: ${greatLosDate} ($${greatLoss}) `;
+
+// applying the results to the results container
+resultContainer.appendChild(totalMonthsResult);
+resultContainer.appendChild(netTotalResult);
+resultContainer.appendChild(avChangeResult);
+resultContainer.appendChild(greatProfitResult);
+resultContainer.appendChild(greatLossresult);
