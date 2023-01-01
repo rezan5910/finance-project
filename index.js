@@ -89,7 +89,7 @@ let finances = [
 
 // The total number of months included in the dataset.
 const numberOfMonths = finances.length;
-console.log(numberOfMonths);
+console.log(`Total Months: ${numberOfMonths}`);
 
 
 // using map method to extract number values from the main array without destroying the main array.
@@ -100,6 +100,39 @@ const finVal = finances.map(item=>item[1]);
 // The net total amount of Profit / Losses over the entire period.
 // adding values and keeping a rolling tally of total and storing the result in anew variable
 const netTotal = finVal.reduce((total,value)=>total+value,0);
-console.log(`$${netTotal}`);
+console.log(`Net Total : $${netTotal}`);
 
+// average change
+// average of changes is calculated by stablishing the rate of change from month to month
+// variable with an empty srray to store the change values
+// total of of the changes is the sum of the value in the array
+// averg is total / number of chnages
 
+let mTmChanges = [];
+    for (let i = 0; i < finVal.length - 1; i++) {  
+        mTmChanges.push(finVal[i+1] - finVal[i])
+    }
+    // console.log(mTmChanges)// producing an array of 85 indexes one less than total length
+
+// average change is the sum of all the values in change array devided by the lengthof the array
+const avChange = mTmChanges.reduce((total,value)=>total+value,0)/mTmChanges.length;
+console.log(`Average Change: $${avChange.toFixed(2)}`)
+
+let greatProfit =0;
+let greatProfDate='';
+let greatLoss=0;
+let greatLosDate='';
+let changeArray = [];
+for (let i=0; i<finances.length-1;i++){
+  changeArray.push(finances[i+1][1]-finances[i][1])
+  const valTrack=changeArray[i];
+  if (valTrack>greatProfit){
+    greatProfit=valTrack;
+    greatProfDate=finances[i+1][0]
+  }else if (valTrack<greatLoss){
+    greatLoss=valTrack;
+    greatLosDate=finances[i+1][0];
+  }
+}
+console.log(`Greatest Increase in profits: ${greatProfDate} ($${greatProfit})`);
+console.log(`Greatest Decrease in Profits: ${greatLosDate} ($${greatLoss}) `);

@@ -23,4 +23,11 @@ my inital approach was a simple for loop on the new array
 // }
 
 ```
-after further reading on the array methods i have implemented a .reduce method on the new array i created to return the same result.
+after further reading on the array methods i have implemented a .reduce() method on the new array i created to return the same result.
+
+
+3rd part of the assigmnets requires the calulacation of total average changes from month to month 
+in order to calculate total i needed to create and empty array to store the values od the chnages by iterating through the copy of array of numbers and calutaling the differences from month to month
+
+4th and 5th part of the assignment reqquires the calculation of greatest increase and greatest decrease in profits and print out when these occurances took place and the value of the change. 
+in order ot calulate these reuqirements, i need to keep track of the changes of each pair of adjoining months stored in a sperate variable, within this new variable excute a iteration that compares the rate of change to the previous difference, if the changes positive indicating it as profit and if the chnages are negative indicating it as a loss
